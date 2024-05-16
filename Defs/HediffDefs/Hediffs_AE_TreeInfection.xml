@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<HediffDef>
+		<defName>Hediff_AE_TreeInfection</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Tree infusion</label>
+		<description>The tree seems to have infected the pawn with something. \nAll of the effects on the body seem to be positive for now though, making the pawn more powerful</description>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>10</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.5</severityPerDay>
+				<showHoursToRecover>false</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>Hediff_AE_TreeInfectedArm</hediff>
+						<partsToAffect>
+							<li>Arm</li>
+						</partsToAffect>
+						<mtbDays>3</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+			</li>
+			<li>
+				<minSeverity>3.5</minSeverity>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>Hediff_AE_TreeInfectedLeg</hediff>
+						<partsToAffect>
+							<li>Leg</li>
+						</partsToAffect>
+						<mtbDays>3</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+			</li>
+			<li>
+				<minSeverity>7</minSeverity>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>Hediff_AE_TreeInfectedTorso</hediff>
+						<partsToAffect>
+							<li>Torso</li>
+						</partsToAffect>
+						<mtbDays>2</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+			</li>
+			<li>
+				<minSeverity>9.9</minSeverity>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>Hediff_AE_TreeInfectedBrain</hediff>
+						<partsToAffect>
+							<li>Brain</li>
+						</partsToAffect>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+			</li>
+			<li>
+				<minSeverity>10</minSeverity>
+				<label>Total</label>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>Hediff_AE_TreeInfectedArm</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Tree-infused arm</label>
+		<description>The limb has been overtaken by the infection, which makes it more powerful</description>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>10</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<partEfficiencyOffset>0.3</partEfficiencyOffset>
+				<statOffsets>
+				  <WorkSpeedGlobal>0.25</WorkSpeedGlobal>
+				  <MeleeDamageFactor>0.25</MeleeDamageFactor>
+			    </statOffsets>
+			</li>
+			<li>
+				<minSeverity>9</minSeverity>
+				<label>Withering</label>
+				<statOffsets>
+				  <WorkSpeedGlobal>0.12</WorkSpeedGlobal>
+				  <MeleeDamageFactor>0.12</MeleeDamageFactor>
+			    </statOffsets>
+			</li>
+			<li>
+				<minSeverity>10</minSeverity>
+				<label>Scars</label>
+				<statOffsets>
+					<PawnBeauty>-0.1</PawnBeauty>
+			    </statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>Hediff_AE_TreeInfectedLeg</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Tree-infused leg</label>
+		<description>The limb has been overtaken by the infection, which makes it more powerful</description>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>10</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<partEfficiencyOffset>0.3</partEfficiencyOffset>
+				<capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>0.15</offset>
+					</li>
+			    </capMods>
+			</li>
+			<li>
+				<minSeverity>9</minSeverity>
+				<label>Withering</label>
+				<capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>0.08</offset>
+					</li>
+			    </capMods>
+			</li>
+			<li>
+				<minSeverity>10</minSeverity>
+				<label>Scars</label>
+				<statOffsets>
+					<PawnBeauty>-0.1</PawnBeauty>
+			    </statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>Hediff_AE_TreeInfectedTorso</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Tree-infused torso</label>
+		<description>The torso has been overtaken by the infection, which makes the body more powerful</description>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>10</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statFactors>
+				  <IncomingDamageFactor>0.5</IncomingDamageFactor>
+				  <MeleeDamageFactor>0.25</MeleeDamageFactor>
+				</statFactors>
+			</li>
+			<li>
+				<minSeverity>9</minSeverity>
+				<label>Withering</label>
+				<statFactors>
+				  <IncomingDamageFactor>0.8</IncomingDamageFactor>
+				  <MeleeDamageFactor>0.12</MeleeDamageFactor>
+				</statFactors>
+			</li>
+			<li>
+				<minSeverity>10</minSeverity>
+				<label>Scars</label>
+				<statFactors>
+				  <PawnBeauty>-0.1</PawnBeauty>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>Hediff_AE_TreeInfectedBrain</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Tree-infected brain</label>
+		<description>The brain was overtaken by the infection, taking any sanity away from the host. \nThis, however, doesn't seem to deal any permanent damage to the brain, so if you manage to clear the infection the pawn might recover</description>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>10</maxSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.5</severityPerDay>
+				<showHoursToRecover>false</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+			    <painFactor>0</painFactor>
+			    <statFactors>
+				  <RestFallRateFactor>0</RestFallRateFactor>
+			    </statFactors>
+			    <capMods>
+					<li>
+					  <capacity>Consciousness</capacity>
+					  <offset>1</offset>
+					</li>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>0.50</offset>
+					</li>
+			    </capMods>
+				<mentalStateGivers>
+				  <li>
+					<mentalState>Berserk</mentalState>
+					<mtbDays>0</mtbDays>
+				  </li>
+				</mentalStateGivers>
+			</li>
+			<li>
+				<minSeverity>1</minSeverity>
+			    <capMods>
+					<li>
+					  <capacity>Consciousness</capacity>
+					  <setMax>0.1</setMax>
+					</li>
+			    </capMods>
+			</li>
+			<li>
+				<minSeverity>8</minSeverity>
+				<label>Recovering</label>
+			    <capMods>
+					<li>
+					  <capacity>Consciousness</capacity>
+					  <setMax>0.5</setMax>
+					</li>
+			    </capMods>
+			</li>
+			<li>
+				<minSeverity>10</minSeverity>
+				<label>Scars</label>
+			    <capMods>
+					<li>
+					  <capacity>Consciousness</capacity>
+					  <offset>-0.1</offset>
+					</li>
+			    </capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

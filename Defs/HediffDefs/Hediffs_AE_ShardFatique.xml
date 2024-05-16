@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<HediffDef>
+		<defName>Hediff_AE_ShardFatique</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Deficiency</label>
+		<description>Side effects caused by the lack of building proteins and other materials caused by dark mechanites</description>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<lethalSeverity>1</lethalSeverity>
+		<tendable>true</tendable>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_TendDuration">
+				<baseTendDurationHours>12</baseTendDurationHours>
+				<severityPerDayTended>-1.0</severityPerDayTended>
+			</li>	
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.2</severityPerDay>
+				<showHoursToRecover>false</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+		  <li>
+			<label>soft</label>
+		  </li>
+		  <li>
+		    <minSeverity>0.2</minSeverity>
+			<label>minor</label>
+			<capMods>
+			  <li>
+				<capacity>Consciousness</capacity>
+				<offset>-0.05</offset>
+			  </li>
+			  <li>
+				<capacity>Moving</capacity>
+				<offset>0.05</offset>
+			  </li>
+			  <li>
+				<capacity>Manipulation</capacity>
+				<offset>0.1</offset>
+			  </li>
+			</capMods>
+		  </li>
+		  <li>
+			<minSeverity>0.5</minSeverity>
+			<label>major</label>
+			<capMods>
+			  <li>
+				<capacity>Consciousness</capacity>
+				<offset>-0.15</offset>
+			  </li>
+			  <li>
+				<capacity>Moving</capacity>
+				<offset>-0.15</offset>
+			  </li>
+			  <li>
+				<capacity>Manipulation</capacity>
+				<offset>0.15</offset>
+			  </li>
+			</capMods>
+		  </li>
+		</stages>
+	</HediffDef>
+
+</Defs>

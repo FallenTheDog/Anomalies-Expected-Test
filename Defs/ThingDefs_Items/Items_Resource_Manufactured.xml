@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="SerumBase">
+		<defName>AESleepEnhancerSerum</defName>
+		<label>sleep enhancer serum</label>
+		<description>A syringe of clear, viscous fluid. Injected near the brainstem, it affect stressed part of the brain and distribute the load among neurons, making rest via sleep more time efficient.\n\nThe effect is temporary and does not stack.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AESleepEnhancerSerum</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Serum/AESleepEnhancerSerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>Hediff_AESleepEnhancerSerum</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+		</comps>
+		<costList>
+			<Neutroamine>2</Neutroamine>
+			<Bioferrite>15</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<workAmount>720</workAmount>
+			<skillRequirements>
+				<Crafting>4</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AESleepEnhancerSerum</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<ThingDef ParentName="SerumBase">
+		<defName>AEFruitSerum</defName>
+		<label>"Fruit of knowledge" serum</label>
+		<description>A syringe filled with purple liquid which, when injected into the body, replicates the effect given by the fruit of knowledge.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AE_Fruit</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Serum/AEFruitSerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>Hediff_AE_Fruit</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+		</comps>
+		<costList>
+			<Neutroamine>3</Neutroamine>
+			<Bioferrite>12</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<workAmount>720</workAmount>
+			<skillRequirements>
+				<Crafting>4</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AEFruitSerumResearch</researchPrerequisite> <!-- Change to the respective research once implemented -->
+		</recipeMaker>
+	</ThingDef>
+	
+	<ThingDef ParentName="SerumBase">
+		<defName>AEFruitInhibitorSerum</defName>
+		<label>"Fruit of knowledge" inhibitor serum</label>
+		<description>A syringe filled with purple liquid which removes the effect given by the fruit of knowledge.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AE_Fruit</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Serum/AEFruitInhibitorSerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+			  <li Class="IngestionOutcomeDoer_GiveHediff">
+				<hediffDef>Hediff_AE_Fruit</hediffDef>
+				<severity>100.0</severity>
+			  </li>
+			</outcomeDoers>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>Hediff_AE_Fruit</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+		</comps>
+		<costList>
+			<Neutroamine>4</Neutroamine>
+		</costList>
+		<recipeMaker>
+			<workAmount>360</workAmount>
+			<skillRequirements>
+				<Crafting>3</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AEFruitSerumResearch</researchPrerequisite> <!-- Change to the respective research once implemented -->
+		</recipeMaker>
+	</ThingDef>
+	
+	<ThingDef ParentName="SerumBase">
+		<defName>AEResourcePills</defName>
+		<label>Resource pills</label>
+		<description>Pills which provide a surplus of various bodily resources, allowing to surpass the effects caused by the razor shard</description>
+		<stackLimit>25</stackLimit>
+		<graphicData>
+			<texPath>Things/Item/Serum/AEResourcePills</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+			  <li Class="IngestionOutcomeDoer_GiveHediff">
+				<hediffDef>Hediff_AE_PillEffect</hediffDef>
+				<severity>5.0</severity>
+			  </li>
+			</outcomeDoers>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>Hediff_AE_PillEffect</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+		</comps>
+		<costList>
+		    <Meat_Human>2</Meat_Human>
+			<Neutroamine>1</Neutroamine>
+		</costList>
+		<recipeMaker>
+			<workAmount>240</workAmount>
+		    <recipeUsers>
+			  <li>DrugLab</li>
+		    </recipeUsers>
+			<skillRequirements>
+				<Crafting>3</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AEResourcePillResearch</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+</Defs>

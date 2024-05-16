@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="TreeBase">
+    <defName>AEPlantCursedTree</defName>
+    <label>Cursed tree</label>
+    <description>TODO</description>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Plant/CursedTree</texPath>
+      <shadowData>
+        <volume>(0.4, 0.3, 0.1)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </shadowData>
+    </graphicData>
+    <minifiedDef IsNull="True" />
+    <statBases>
+      <Beauty>-10</Beauty>
+      <BeautyOutdoors>-10</BeautyOutdoors>
+      <Flammability>0</Flammability>
+      <MaxHitPoints>230</MaxHitPoints>
+      <MeditationFocusStrength>0.14</MeditationFocusStrength>
+    </statBases>
+    <ingestible />
+    <neverMultiSelect>false</neverMultiSelect>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+    <canScatterOver>false</canScatterOver>
+    <plant>
+      <pollution>Any</pollution>
+      <growDays>10</growDays>
+      <visualSizeRange>1.5~2.1</visualSizeRange>
+      <sowMinSkill>0</sowMinSkill>
+      <sowTags Inherit="False"/>
+      <lifespanDaysPerGrowDays>0</lifespanDaysPerGrowDays>
+      <fertilityMin>0.5</fertilityMin>
+      <fertilitySensitivity>0.5</fertilitySensitivity>
+      <wildClusterWeight>0</wildClusterWeight>
+      <sowWork>400</sowWork>
+      <harvestYield>25</harvestYield>
+      <harvestedThingDef>Bioferrite</harvestedThingDef>
+      <treeCategory>Super</treeCategory>
+      <dieIfNoSunlight>false</dieIfNoSunlight>
+      <growMinGlow>0</growMinGlow>
+      <sowResearchPrerequisites Inherit="False" />
+      <dieFromToxicFallout>False</dieFromToxicFallout>
+      <showGrowthInInspectPane>true</showGrowthInInspectPane>
+      <minSpacingBetweenSamePlant>4.9</minSpacingBetweenSamePlant>
+      <harvestWork>1000</harvestWork>
+      <choppedThingDef>ChoppedStump_Harbinger</choppedThingDef>
+      <smashedThingDef>SmashedStump_Harbinger</smashedThingDef>
+    </plant>
+    <comps>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>2000</ticksPerHeal> <!-- 30 hp per day, must be a multiple of 2000, since plants have Long ticker -->
+      </li>
+      <li Class="CompProperties_MeditationFocus">
+        <statDef>MeditationFocusStrength</statDef>
+        <focusTypes>
+          <li>Void</li>
+        </focusTypes>
+      </li>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Use {0_label}</useLabel>
+        <useDuration>600</useDuration>
+        <showUseGizmo>true</showUseGizmo>
+      </li>
+      <li Class="CompProperties_UseEffectAddHediff">
+        <hediffDef>Hediff_AE_TreeInfection</hediffDef>
+		<allowRepeatedUse>true</allowRepeatedUse>
+      </li>
+    </comps>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+  </ThingDef>
+
+</Defs>

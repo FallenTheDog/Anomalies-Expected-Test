@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="ResourceVerbBase">
+		<defName>AE_ShardMonosword</defName>
+		<label>Razor shard</label>
+		<description>A piece of dark archotechnology resembling the common shards, although this one seems to be much sharper, \nappearing to cut through almost any material with ease</description>
+		<graphicData>
+			<texPath>Things/Item/Weapon/AEShardMonosword</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>1500</MarketValue>
+			<Flammability>0.0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<SellPriceFactor>0.5</SellPriceFactor>
+			<Mass>2.4</Mass>
+		</statBases>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<useHitPoints>false</useHitPoints>
+		<destroyable>false</destroyable>
+		<smeltable>false</smeltable>
+		<alwaysHaulable>True</alwaysHaulable>
+		<stackLimit>1</stackLimit>
+		<equippedStatOffsets>
+			<MoveSpeed>0.12</MoveSpeed>
+			<InjuryHealingFactor>0.9</InjuryHealingFactor>
+		</equippedStatOffsets>
+		<weaponClasses>
+			<li>Melee</li>
+			<li>MeleePiercer</li>
+		</weaponClasses>
+		<comps>
+			<li Class="CompProperties_CauseHediff_Apparel">
+				<hediff>Hediff_AE_ShardFatique</hediff>
+			</li>
+		</comps>
+		<tools>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>12</power>
+			<cooldownTime>1.6</cooldownTime>
+		  </li>
+		  <li>
+			<label>point</label>
+			<capacities>
+			  <li>Stab</li>
+			</capacities>
+			<power>25</power>
+			<cooldownTime>2</cooldownTime>
+			<armorPenetration>0.9</armorPenetration>
+		  </li>
+		  <li>
+			<label>edge</label>
+			<capacities>
+			  <li>Cut</li>
+			</capacities>
+			<power>25</power>
+			<cooldownTime>2</cooldownTime>
+			<armorPenetration>0.9</armorPenetration>
+		  </li>
+		</tools>
+	</ThingDef>
+
+</Defs>

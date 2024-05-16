@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>AE_Fruit</defName>
+		<label>Fruit of knowledge</label>
+		<description>A fruit of golden color in a shape of a normal apple. \nIt seems to have a flowery scent, but one should think twice before eating it, since it can't be that good, right?</description>
+		<graphicData>
+			<texPath>Things/Item/Usable/AEFruit</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.6</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<Flammability>0.0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<SellPriceFactor>0.5</SellPriceFactor>
+			<Mass>0.2</Mass>
+			<Nutrition>0.4</Nutrition>
+		</statBases>
+		<useHitPoints>false</useHitPoints>
+		<smeltable>false</smeltable>
+		<alwaysHaulable>True</alwaysHaulable>
+		<stackLimit>1</stackLimit>
+		<ingestible>
+		  <preferability>DesperateOnly</preferability>
+		  <foodType>VegetableOrFruit</foodType>
+		  <ingestSound>Meal_Eat</ingestSound>
+		  <outcomeDoers>
+			<li Class="IngestionOutcomeDoer_GiveHediff">
+			  <hediffDef>Hediff_AE_Fruit</hediffDef>
+			  <severity>1.00</severity>
+			</li>
+		  </outcomeDoers>
+		</ingestible>
+	</ThingDef>
+
+</Defs>
