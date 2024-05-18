@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>AE_Fruit</defName>
+		<label>Fruit of knowledge</label>
+		<description>A fruit of golden color in a shape of a normal apple. \nIt seems to have a flowery scent, but one should think twice before eating it, since it can't be that good, right?</description>
+		<graphicData>
+			<texPath>Things/Item/Usable/AEFruit</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.6</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<Flammability>0.0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<SellPriceFactor>0.5</SellPriceFactor>
+			<Mass>0.2</Mass>
+			<Nutrition>0.4</Nutrition>
+		</statBases>
+		<useHitPoints>false</useHitPoints>
+		<smeltable>false</smeltable>
+		<alwaysHaulable>True</alwaysHaulable>
+		<stackLimit>1</stackLimit>
+		<ingestible>
+		  <preferability>DesperateOnly</preferability>
+		  <foodType>VegetableOrFruit</foodType>
+		  <ingestSound>Meal_Eat</ingestSound>
+		  <outcomeDoers>
+			<li Class="IngestionOutcomeDoer_GiveHediff">
+			  <hediffDef>Hediff_AE_Fruit</hediffDef>
+			  <severity>1.00</severity>
+			</li>
+		  </outcomeDoers>
+		</ingestible>
+	</ThingDef>
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>AE_Clock</defName>
+		<label>Anomalous clock</label>
+		<description>A mechanism which functions akin to a clock, but seems to be running slower than it's normal counterpart. \nIt also seems to be affecting any biological beings in it's vicinity</description>
+		<graphicData>
+			<texPath>Things/Item/Usable/AEClock</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<Flammability>0.0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<SellPriceFactor>1</SellPriceFactor>
+			<Mass>0.45</Mass>
+		</statBases>
+		<useHitPoints>false</useHitPoints>
+		<smeltable>false</smeltable>
+		<alwaysHaulable>True</alwaysHaulable>
+		<stackLimit>1</stackLimit>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Use {0_label}</useLabel>
+			<useDuration>600</useDuration>
+			<showUseGizmo>true</showUseGizmo>
+		  </li>
+		  <li Class="CompProperties_UseEffectAddHediff">
+			<hediffDef>Hediff_AE_Clock</hediffDef>
+			<allowRepeatedUse>true</allowRepeatedUse>
+		  </li>
+		</comps>
+	</ThingDef>
+
+</Defs>
